@@ -2,35 +2,31 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 34aa2dccf6d1939035e1942ebfe54a2fb03bca5992ae077dab5c5656a60ee3b4
+-- hash: add2d165571906b9b16d5eda4cb4f705fbad873cef2cab6f55fc0ca9621de46f
 
-name:                dep2nix
-version:             0.1.0.0
-homepage:            https://github.com/githubuser/dep2nix#readme
-bug-reports:         https://github.com/githubuser/dep2nix/issues
-license:             BSD3
-license-file:        LICENSE
-author:              John Children
-maintainer:          example@example.com
-copyright:           2017 John Children
-category:            Web
-build-type:          Simple
-cabal-version:       >= 1.10
+name:           dep2nix
+version:        0.1.0.0
+category:       Web
+homepage:       https://github.com/johnchildren/dep2nix#readme
+bug-reports:    https://github.com/johnchildren/dep2nix/issues
+author:         John Children
+maintainer:     example@example.com
+copyright:      2017 John Children
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
 
 extra-source-files:
     README.md
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/dep2nix
+  location: https://github.com/johnchildren/dep2nix
 
 library
   hs-source-dirs:
       src
-  exposed-modules:
-      Lib
-  other-modules:
-      Paths_dep2nix
   build-depends:
       base >=4.7 && <5
     , containers
@@ -41,12 +37,16 @@ library
     , text
     , unordered-containers
     , vector
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_dep2nix
   default-language: Haskell2010
 
 executable dep2nix-exe
+  main-is: Main.hs
   hs-source-dirs:
       app
-  main-is: Main.hs
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base
@@ -58,13 +58,13 @@ executable dep2nix-exe
 
 test-suite dep2nix-test
   type: exitcode-stdio-1.0
+  main-is: Spec.hs
   hs-source-dirs:
       test
-  main-is: Spec.hs
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base
     , dep2nix
   other-modules:
       Paths_dep2nix
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
   default-language: Haskell2010

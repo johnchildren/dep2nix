@@ -5,7 +5,7 @@ author: John Children
 maintainer: example@example.com
 copyright: 2017 John Children
 license: BSD3
-github: githubuser/dep2nix
+github: johnchildren/dep2nix
 extra-source-files:
 - README.md
 library:
